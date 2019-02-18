@@ -10,8 +10,7 @@ import os
 
 app = Flask(__name__)
 db = SQLAlchemy(app)
-#Post.query.filter_by(id = id).all()
-#Post.query.filter_by(category=category).all()
+
 
 db_path = os.path.join(os.path.dirname(__file__), 'test.db')
 db_uri = 'sqlite:///{}'.format(db_path)
@@ -143,8 +142,6 @@ def register():
 
 
 	return render_template('register.html', form=form)
-#items=User.query.filter_by(username=session.get("username")).all()
-# items.size() + 1
 
 
 @app.route("/login", methods=['GET', 'POST'])

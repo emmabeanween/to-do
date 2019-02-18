@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body ">
+
+
+	<h1 style="font-family:Courier New , Courier, monospace; margin-left: 500px; margin-top: 50px; ; float: left; "><b>to-do</b></h1>
+	<i class="fa fa-pencil-square-o" aria-hidden="true" style="margin-top: 45px; font-size: 50px; margin-left: 25px;"></i>
+
+
+	<span style="float: right; font-family:Courier New , Courier, monospace;">hello, <i>{{name}} </i>
+		<form method="POST" action="{{url_for('home')}}"><input type="submit" name="logout" value="logout"></form></span>
+        </br></br>
+		<a href="additem" style="margin-left: 530px;">add item</a>
+
+
+
+		<div style=" overflow-y: auto; width: 400px; height: 400px; border: 1px solid black; border-radius: 10%; margin-left: 400px; margin-top: 15px;">
+	    {%for item in items%}	
+
+        &nbsp&nbsp&nbsp&nbsp {{item.task_id}}<span>. &nbsp</span><a href='viewitem/{{item.task_id}}' style="font-family: Courier New, Courier, monospace; margin-left: 40px; margin-top: 10px; ">{{item.task}}</a>
+        {% if item.finished == True %}
+
+          <input type="checkbox" checked="checked" onclick="return false;">
+        {%else%}
+         <input type="checkbox" onclick="return false;" >
+
+        {%endif%}
+         </br></br>
+
+	    {% endfor %}	 
+
+
+
+		</div>
+
+</body>
+</html>

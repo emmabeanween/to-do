@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<h1 style="font-family: Courier New, Courier, monospace; margin-left: 450px; margin-top: 70px;">item {{item.task_id}}</h1>
+	<span style="font-family: Courier New, Courier, monospace; margin-left: 450px;">{{item.date.strftime("%m/%d/%Y")}}</span>
+	<div style="border: 2px solid black; border-radius: 10%; margin-left: 400px; margin-top: 20px; width: 300px; height: 200px;">
+    <form method="POST"  action="{{url_for('viewitem', id=item.task_id)}}">
+    <label style="font-family: Courier New, Courier, monospace; margin-left: 50px; margin-top: 20px;">task title</label></br></br>
+	<input style="margin-left: 50px;" name="task" value="{{item.task}}"></br></br>
+	 <label style="font-family: Courier New, Courier, monospace; margin-left: 50px; margin-top: 20px;">task content</label></br></br>
+	<textarea style="margin-left: 50px;" name="content">{{item.content}}</textarea></br></br>
+	<span style="margin-left: 50px;">Done?</span>
+	{%  if item.finished == True  %}
+	<input type="checkbox" checked="checked" name="finished">
+	{%else %}
+	<input type="checkbox" name="finished">
+	{%endif%}
+	<input type="submit" name="update" value="update">
+	<input type="submit" name="update" value="delete item">
+</form>
+</div>
+</body>
+</html>

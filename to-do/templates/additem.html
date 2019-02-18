@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+	<h1 style="font-family:Courier New , Courier, monospace; margin-left: 480px; margin-top: 50px; ; float: left; "><b>add item</b></h1>
+	<i class="fa fa-plus-circle" aria-hidden="true" style="margin-top: 45px; font-size: 40px; margin-left: 25px;"></i></br></br>
+	<div style="width: 300px; height: 300px; border: 2px solid black; border-radius: 10%; margin-left: 430px;">
+		<form style="margin-left: 70px; margin-top: 20px;" method="POST" action="{{url_for('additem')}}">
+{{form.csrf_token}}
+<span style="width: 300px; height: 400px;font-family:Courier New , Courier, monospace;">{{form.task.label}}</span></br>
+{{form.task}}</br></br>
+<span style="width: 300px; height: 400px;font-family:Courier New , Courier, monospace;">{{form.content.label}}</span></br>
+{{form.content}}</br></br>
+{{form.submit}}
+</form>
+
+
+
+</body>
+</html>

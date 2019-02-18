@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<h1 style="margin-left: 520px; margin-top: 100px; font-style: italic; font-family:  Courier New, Courier, monospace;">register</h1>
+<div style=" border: 2px solid black; border-radius: 10%; margin-left: 450px; margin-top: 20px; width: 300px; height: 250px;">
+<form method="POST" action="{{url_for('register')}}" style="margin-left: 70px; margin-top: 40px;">
+{{form.csrf_token}}
+{{form.username.label}}</br>
+{{form.username}}</br></br>
+{{form.password.label}}</br>
+{{form.password}}</br></br>
+<span style="margin-left: 30px;">{{form.submit}}
+</span>
+
+
+
+</form>
+</div>
+
+<span style="font-size: 14px; margin-left: 550px; font-family: Courier New, Courier, monospace;"><a href = "{{url_for('login')}}">login</a></span>
+
+
+{%  for message in get_flashed_messages()   %}
+<div class="alert alert-info alert-dismissible">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>{{message}}</strong> 
+  </div>
+{%   endfor  %} 
+
+
+</body>
+</html>
